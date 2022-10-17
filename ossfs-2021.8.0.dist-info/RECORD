@@ -1,0 +1,10 @@
+ossfs-2021.8.0.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+ossfs-2021.8.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+ossfs-2021.8.0.dist-info/METADATA,sha256=rmrHHR1OwzgYWQK2j-4Icl0kJRKT_c2410WeafZofXg,1078
+ossfs-2021.8.0.dist-info/RECORD,,
+ossfs-2021.8.0.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+ossfs-2021.8.0.dist-info/top_level.txt,sha256=wmoKwbliCHkN7hJqatFnUevbRAtGA3ykhZWkyNyEpN8,6
+ossfs/__init__.py,sha256=2QiZ30K_2AqoK-TzdaEu-wbuzPHhWQDC2SBC2iRkwIM,226
+ossfs/__pycache__/__init__.cpython-38.pyc,,
+ossfs/__pycache__/core.cpython-38.pyc,,
+ossfs/core.py,sha256=l82sg_Pte7u67TKc1CE0kpulr77hJhiOz3L_T2ZIh2A,25022

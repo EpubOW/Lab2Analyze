@@ -1,0 +1,15 @@
+adlfs-2022.10.0.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+adlfs-2022.10.0.dist-info/LICENSE.txt,sha256=f9wt57aZO0eDfqXLbnWPVqvS9K1lzESQBkjFHvvafec,1488
+adlfs-2022.10.0.dist-info/METADATA,sha256=2uQpjpFgll55_kqEEQ5vd_f0n2SVEJ7tKr6pEe4SKAA,5678
+adlfs-2022.10.0.dist-info/RECORD,,
+adlfs-2022.10.0.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+adlfs-2022.10.0.dist-info/entry_points.txt,sha256=fXTz52mzdXbrXonqyU_KMK5FsSpHneVIooEwePKGK6Q,49
+adlfs-2022.10.0.dist-info/top_level.txt,sha256=RzOBusmB48_VR41Zj4VBC2RC-QWTd995oL7C7wdXDOg,6
+adlfs/__init__.py,sha256=45wTPDa1gvSZyCF_E4Vq1zNk5elU_KIwKjt4C-fvq88,344
+adlfs/__pycache__/__init__.cpython-38.pyc,,
+adlfs/__pycache__/_version.cpython-38.pyc,,
+adlfs/__pycache__/spec.cpython-38.pyc,,
+adlfs/__pycache__/utils.cpython-38.pyc,,
+adlfs/_version.py,sha256=ZyYPhNDh2ACIv86TqHfv4M0O0v7VF4UTqSJ7JCqAoQY,501
+adlfs/spec.py,sha256=4auvP8_x_Qk_rGyKFZmTMZk3yiKqCsoj8q5hyLzI2DE,79998
+adlfs/utils.py,sha256=_VirrOEzzJ1X6kgY4kO9_jbaqjFlh_spLXAOEjaYxyo,2072
