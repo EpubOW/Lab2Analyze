@@ -25,3 +25,13 @@ stages:
     - path: model_two.py
       md5: bc4f0826dc2b034442ce70305c840342
       size: 6094
+  third:
+    cmd: python model_third.py
+    deps:
+    - path: Dataset_Food
+      md5: 840fdb9a23c98313dde45246036c291f.dir
+      size: 452697142
+      nfiles: 5000
+    - path: model_third.py
+      md5: 1b0844a7329a70da2fe0c25fd1eaea68
+      size: 5128

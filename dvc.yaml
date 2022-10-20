@@ -11,3 +11,8 @@ stages:
     deps:
     - Dataset_Food
     - model_two.py
+  third:
+    cmd: python model_third.py
+    deps:
+    - Dataset_Food
+    - model_third.py
