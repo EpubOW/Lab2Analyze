@@ -8,10 +8,20 @@ stages:
       size: 452697142
       nfiles: 5000
     - path: model_one.py
-      md5: 861ff26391c3afccdfaec09c5358d82c
-      size: 3513
+      md5: b23d0738c43d647677597e10643e178c
+      size: 3600
     outs:
     - path: Dataset
-      md5: d751713988987e9331980363e24189ce.dir
-      size: 0
-      nfiles: 0
+      md5: 2a81afd5887354468d3c590a67f238fd.dir
+      size: 40
+      nfiles: 1
+  second:
+    cmd: python model_two.py
+    deps:
+    - path: Dataset_Food
+      md5: 840fdb9a23c98313dde45246036c291f.dir
+      size: 452697142
+      nfiles: 5000
+    - path: model_two.py
+      md5: bc4f0826dc2b034442ce70305c840342
+      size: 6094

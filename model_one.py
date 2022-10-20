@@ -10,10 +10,10 @@ import numpy as np # linear algebra
 # Input data files are available in the read-only "../input/" directory
 # For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory
 
-import os
-for dirname, _, filenames in os.walk('D:\GitHub\Lab2Analyze\Lab2Analyze\Dataset_Food'):
-    for filename in filenames:
-        print(os.path.join(dirname, filename))
+# import os
+# for dirname, _, filenames in os.walk('D:\GitHub\Lab2Analyze\Lab2Analyze\Dataset_Food'):
+#     for filename in filenames:
+#         print(os.path.join(dirname, filename))
 
 
 # In[2]:
@@ -27,18 +27,17 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 # In[8]:
 
-
-non_food = plt.imread('D:/GitHub/Lab2Analyze/Lab2Analyze/Dataset_Food/validation/non_food/300.jpg')
-plt.imshow(non_food)
-plt.title('Non food category image')
-
-
-# In[6]:
+# non_food = plt.imread('D:/GitHub/Lab2Analyze/Lab2Analyze/Dataset_Food/validation/non_food/300.jpg')
+# plt.imshow(non_food)
+# plt.title('Non food category image')
 
 
-food = plt.imread('D:/GitHub/Lab2Analyze/Lab2Analyze/Dataset_Food/validation/food/270.jpg')
-plt.imshow(food)
-plt.title('Food category image')
+# # In[6]:
+
+
+# food = plt.imread('D:/GitHub/Lab2Analyze/Lab2Analyze/Dataset_Food/validation/food/270.jpg')
+# plt.imshow(food)
+# plt.title('Food category image')
 
 
 # In[7]:
@@ -119,6 +118,6 @@ Y = model.fit_generator(train_generator, epochs=5,validation_data=valid_generato
 
 # In[15]:
 
-
-print(model.evaluate_generator(test_generator,steps=len(test_generator)))
+with open("Dataset/result_first.txt", "w") as file:
+    file.write(repr(model.evaluate_generator(test_generator,steps=len(test_generator))))
 

@@ -6,3 +6,8 @@ stages:
     - model_one.py
     outs:
     - Dataset
+  second:
+    cmd: python model_two.py
+    deps:
+    - Dataset_Food
+    - model_two.py
