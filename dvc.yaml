@@ -1,0 +1,8 @@
+stages:
+  first:
+    cmd: python model_one.py
+    deps:
+    - Dataset_Food
+    - model_one.py
+    outs:
+    - Dataset

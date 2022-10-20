@@ -1,0 +1,17 @@
+schema: '2.0'
+stages:
+  first:
+    cmd: python model_one.py
+    deps:
+    - path: Dataset_Food
+      md5: 840fdb9a23c98313dde45246036c291f.dir
+      size: 452697142
+      nfiles: 5000
+    - path: model_one.py
+      md5: 861ff26391c3afccdfaec09c5358d82c
+      size: 3513
+    outs:
+    - path: Dataset
+      md5: d751713988987e9331980363e24189ce.dir
+      size: 0
+      nfiles: 0
