@@ -1,5 +1,6 @@
 [core]
     remote = my_remote
+    autostage = true
 ['remote "remote_storage"']
     url = D:\GitHub\Lab2Analyze\Lab2Analyze\dvc_remote
 ['remote "my_remote"']
