@@ -34,9 +34,8 @@ from sklearn.metrics import classification_report, confusion_matrix
 
 from PIL import Image
 import numpy as np
-import matplotlib.pylab as plt
+# import matplotlib.pylab as plt
 from matplotlib.pyplot import figure
-import tensorflow as tf
 import random
 from  sklearn.utils import shuffle
 import seaborn as sns
@@ -46,6 +45,7 @@ from sklearn.metrics import classification_report
 from keras.layers import Input, Add, Dense,GlobalAvgPool2D
 import tensorflow as tf
 from keras import regularizers
+from tensorflow.keras import layers
 from tensorflow.keras.models import Model
 from keras.layers import Input, Add, Dense, Concatenate, AvgPool2D, Dropout,BatchNormalization,  GlobalAveragePooling2D
 
@@ -134,22 +134,47 @@ test_data_generator=testdata_generator.flow_from_directory(test_path,batch_size=
 
 class_dict = train_data_generator.class_indices
 class_list = list(class_dict.keys())
+class_list
+
 
 # In[17]:
+
+
+
+data_augmentation = keras.Sequential(
+    [
+        layers.RandomFlip("horizontal"),
+        layers.RandomRotation(0.1),
+        layers.RandomZoom(0.1),
+        layers.RandomContrast([1.0, 10.0])
+    ]
+)
+
 train_number=train_data_generator.samples
 valid_number=valid_data_generator.samples
 
+
 # In[18]:
+
 
 dense121_model= tf.keras.applications.xception.Xception(weights='imagenet',include_top=False)
 dense121_model.trainable = True
 
 for layers in dense121_model.layers[:-32]:
     layers.trainable = False
+# x= dense121_model.output
+# x= GlobalAveragePooling2D()(x)
+# x= BatchNormalization()(x)
+# x= Dropout(0.5)(x)
+# x= Dense(1024,activation='relu', kernel_regularizer=regularizers.l2(0.0001))(x) 
+# x= Dense(512,activation='relu', kernel_regularizer=regularizers.l2(0.0001))(x) 
 
+# x= Dropout(0.5)(x)
+# prediction= Dense(2, activation = 'softmax')(x)
 
 model= tf.keras.Sequential()
 model.add(tf.keras.layers.InputLayer(input_shape=(224,224,3)))
+model.add(data_augmentation)
 model.add(dense121_model)
 model.add(tf.keras.layers.GlobalAveragePooling2D())
 model.add(tf.keras.layers.Dense(2))
@@ -180,7 +205,7 @@ history= model.fit(train_data_generator,
                    validation_steps= valid_number//batch_size,
                    shuffle=True, 
                    
-                   epochs =3, 
+                   epochs =1, 
                    batch_size = 30,callbacks=[tensor_board,check_point,reduce_lr])
 
 
@@ -198,7 +223,7 @@ history= model.fit(train_data_generator,
 
 # In[30]:
 
-with open("Dataset/result_second.txt", "w") as file:
+with open("Dataset/result_second_aug.txt", "w") as file:
     file.write(repr(model.evaluate_generator(test_data_generator,steps=len(test_data_generator))))
 
 

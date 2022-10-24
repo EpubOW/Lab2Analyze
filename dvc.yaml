@@ -16,3 +16,15 @@ stages:
     deps:
     - Dataset_Food
     - model_third.py
+  second_aug:
+    cmd: python model_two_aug.py
+    deps:
+    - Dataset_Food
+  first_aug:
+    cmd: python model_one_aug.py
+    deps:
+    - Dataset_Food
+  third_aug:
+    cmd: python model_third_aug.py
+    deps:
+    - Dataset_Food
