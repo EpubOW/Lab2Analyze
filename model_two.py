@@ -12,6 +12,7 @@ import glob as gb
 import keras
 from keras.models import Sequential
 from keras.layers import Dense, Activation, Dropout, Flatten, Conv2D, MaxPooling2D
+from keras.models import load_model
 
 from keras.preprocessing.image import ImageDataGenerator
 from sklearn.model_selection import train_test_split
@@ -180,25 +181,18 @@ history= model.fit(train_data_generator,
                    validation_steps= valid_number//batch_size,
                    shuffle=True, 
                    
-                   epochs =3, 
+                   epochs =1, 
                    batch_size = 30,callbacks=[tensor_board,check_point,reduce_lr])
 
+
+model.save('model.h5')
 
 # In[27]:
 
 
-# plt.plot(history.history['accuracy'])
-# plt.plot(history.history['val_accuracy'])
-# plt.title('model accuracy')
-# plt.ylabel('accuracy')
-# plt.xlabel('epoch')
-# plt.legend(['train', 'test'], loc='upper left')
-# plt.show()
-
-
 # In[30]:
 
-with open("Dataset/result_second.txt", "w") as file:
-    file.write(repr(model.evaluate_generator(test_data_generator,steps=len(test_data_generator))))
+# with open("Dataset/result_second.txt", "w") as file:
+#     file.write(repr(model.evaluate_generator(test_data_generator,steps=len(test_data_generator))))
 
 

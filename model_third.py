@@ -26,6 +26,7 @@ from tensorflow.keras.callbacks import ReduceLROnPlateau,EarlyStopping
 import tensorflow as tf
 import json
 import os
+from keras.models import load_model
 
 
 # In[24]:
@@ -34,7 +35,7 @@ import os
 im_height = 224
 im_width = 224
 batch_size = 128
-epochs = 5
+epochs = 1
 
 
 # In[26]:
@@ -126,44 +127,9 @@ history = model.fit(x=train_data_gen,
                     callbacks=[Early_sp,reduce_lr])
 
 
-# In[29]:
+model.save('model.h5')
 
-
-# history_dict = history.history
-# train_loss = history_dict["loss"]
-# train_accuracy = history_dict["accuracy"]
-# val_loss = history_dict["val_loss"]
-# val_accuracy = history_dict["val_accuracy"]
-
-# # figure 1
-# plt.figure()
-# plt.plot(range(epochs), train_loss, label='train_loss')
-# plt.plot(range(epochs), val_loss, label='val_loss')
-# plt.legend()
-# plt.xlabel('epochs')
-# plt.ylabel('loss')
-
-# # figure 2
-# plt.figure()
-# plt.plot(range(epochs), train_accuracy, label='train_accuracy')
-# plt.plot(range(epochs), val_accuracy, label='val_accuracy')
-# plt.legend()
-# plt.xlabel('epochs')
-# plt.ylabel('accuracy')
-# plt.show()
-
-
-# In[30]:
-
-
-# scores = model.evaluate(test_data_gen, verbose=1)
-# print('Test loss:', scores[0])
-# print('Test accuracy:', scores[1])
-
-
-# In[31]:
-
-with open("Dataset/result_third.txt", "w") as file:
-    file.write(repr(model.evaluate_generator(test_data_gen,steps=len(test_data_gen))))
+# with open("Dataset/result_third.txt", "w") as file:
+#     file.write(repr(model.evaluate_generator(test_data_gen,steps=len(test_data_gen))))
 
 

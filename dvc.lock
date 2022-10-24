@@ -1,58 +1,19 @@
 schema: '2.0'
 stages:
-  first:
+  training:
     cmd: python model_one.py
     deps:
     - path: Dataset_Food
       md5: 840fdb9a23c98313dde45246036c291f.dir
       size: 452697142
       nfiles: 5000
+  testing:
+    cmd: python test_models.py
+    deps:
+    - path: Dataset_Food
+      md5: 840fdb9a23c98313dde45246036c291f.dir
+      size: 452697142
+      nfiles: 5000
     - path: model_one.py
-      md5: b23d0738c43d647677597e10643e178c
-      size: 3600
-    outs:
-    - path: Dataset
-      md5: 2a81afd5887354468d3c590a67f238fd.dir
-      size: 40
-      nfiles: 1
-  second:
-    cmd: python model_two.py
-    deps:
-    - path: Dataset_Food
-      md5: 840fdb9a23c98313dde45246036c291f.dir
-      size: 452697142
-      nfiles: 5000
-    - path: model_two.py
-      md5: 22509a6bcf27980c27ea0571a9c93e11
-      size: 5968
-  third:
-    cmd: python model_third.py
-    deps:
-    - path: Dataset_Food
-      md5: 840fdb9a23c98313dde45246036c291f.dir
-      size: 452697142
-      nfiles: 5000
-    - path: model_third.py
-      md5: 1b0844a7329a70da2fe0c25fd1eaea68
-      size: 5128
-  second_aug:
-    cmd: python model_two_aug.py
-    deps:
-    - path: Dataset_Food
-      md5: 840fdb9a23c98313dde45246036c291f.dir
-      size: 452697142
-      nfiles: 5000
-  first_aug:
-    cmd: python model_one_aug.py
-    deps:
-    - path: Dataset_Food
-      md5: 840fdb9a23c98313dde45246036c291f.dir
-      size: 452697142
-      nfiles: 5000
-  third_aug:
-    cmd: python model_third_aug.py
-    deps:
-    - path: Dataset_Food
-      md5: 840fdb9a23c98313dde45246036c291f.dir
-      size: 452697142
-      nfiles: 5000
+      md5: 3b7e4c3d0d402cad9bc788f90003c85c
+      size: 2345
